@@ -1,0 +1,66 @@
+JANUARY 8, 2019
+Vagrant Quick Read
+Introduction
+Vagrant is the command line utility for managing the virtual machines. The following image shows the overview of vagrant.
+
+
+vagrant overview
+Vagrant Providers
+Vagrant uses Providers to support managing machines on various virtualization technologies. The most popular providers are
+
+Virtual Box
+VmWare
+Hyper-V
+So for experimenting with Vagrant we need to have one of the above hypervisor’s installed on the machine
+
+Installing Virtual Box
+Refer here If you are on the windows machine with Chocolatey installed. Then execute the following command from powershell
+
+choco install virtualbox -y
+Install VmWare
+Ubuntu
+
+Windows
+
+Enabling Hyper-V
+Refer here
+
+Installation
+Official installation of vagrant can be found here
+
+If you are on the windows machine with Chocolatey installed. Then execute the following command from powershell
+
+choco install vagrant -y
+Features
+Vagrantfile:
+A Vagrantfile is a configuration file for controlling virtual machine.
+It uses simple ruby syntax Refer here
+It contains all the necessary information needed for other user who wants to recreate the same vm
+If the user needs to recreate the virtual machine created, then only Vagrantfile is shared
+Boxes
+Boxes are the package format for Vagrant
+Boxes can be easily downloaded by using vagrant box add command
+Publicly available boxes are shared here .
+Every Box is restricted to run on supported providers. So while choosing the box check whether it matches your Provider(VirtualBox/Hyper-V/VmWare)
+Networking
+Vagrant supports 3 main types of networking
+Public Networking
+Private Networking
+Port-Forwarding
+Port-forwarding is the action of linking a port on your host machine to a port on the guest machine. Refer here
+Private Networking_ allows the virtual machine to be accessed via private address. Refer here
+Public Networking attempts to allow public access from outside your host machine (if your provider and machine will allow it) instead of just allowing access from inside the host machine. Refer here
+Provisioning
+Provisioning offers you the way to configure the virtual machine by executing Scripts or configurations. Refer here
+Provisioning happens in the following cases
+Executing vagrant up command for the first time
+Executing vagrant provision command
+Executing vagrant reload --provision command
+Plugins
+you want to change the way Vagrant does something or add additional functionality to Vagrant. This can be done via Vagrant plugins.
+Vagrant CLI
+Refer here
+
+Cheat sheet
+
+
